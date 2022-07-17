@@ -19,8 +19,8 @@ script:
   - docker-compose -f docker-compose-build.yaml build --parallel
   - docker tag udagram-api-feed docker_hub/udagram-api-feed
   - docker tag udagram-api-user docker_hub/udagram-api-user
-  - docker tag udagram-frontend docker_hub/udagram-frontend
-  - docker tag udagram-reverseproxy docker_hub/udagram-reverseproxy
+  - docker tag udagram-frontend:local docker_hub/udagram-frontend
+  - docker tag udagram-reverseproxy:latest docker_hub/udagram-reverseproxy
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
