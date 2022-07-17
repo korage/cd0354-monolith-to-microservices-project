@@ -15,6 +15,7 @@ before_script:
 
 script:
   - docker --version # print the version for loggin
+  - docker image prune --all
   - docker-compose -f docker-compose-build.yaml build --parallel
   - docker tag udagram-api-feed docker_hub/udagram-api-feed
   - docker tag udagram-api-user docker_hub/udagram-api-user
