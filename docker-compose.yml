@@ -3,7 +3,7 @@ services:
   reverseproxy:
       image: reverseproxy
       ports:
-          - 3000:3000
+          - 8080:8080
       restart: always
       depends_on:
         - backend-user
@@ -37,4 +37,4 @@ services:
   frontend:
     image: udagram-frontend:local
     ports:
-      - "8100:30"
+      - "8100:80"

@@ -17,9 +17,9 @@ script:
   - docker --version # print the version for loggin
   - docker image prune -f -a
   - docker-compose -f docker-compose-build.yaml build --parallel
-  - docker tag udagram-api-feed docker_hub/udagram-api-feed
-  - docker tag udagram-api-user docker_hub/udagram-api-user
-  - docker tag udagram-frontend:local docker_hub/udagram-frontend
+  - docker tag backend-feed docker_hub/udagram-api-feed
+  - docker tag backend-user docker_hub/udagram-api-user
+  - docker tag frontend:local docker_hub/udagram-frontend
   - docker tag reverseproxy docker_hub/udagram-reverseproxy
 
 after_success:
