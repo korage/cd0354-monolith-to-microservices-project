@@ -1,21 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: udagram-frontend
+  name: frontend
   labels:
-    app: udagram-frontend
+    app: frontend
 spec:
-  replicas: 0
+  replicas: 2
   selector:
     matchLabels:
-      app: udagram-frontend
+      app: frontend
   template:
     metadata:
       labels:
-        app: udagram-frontend
+        app: frontend
     spec:
       containers:
-      - name: udagram-frontend
+      - name: frontend
         image: korage/udagram-frontend
         ports:
         - containerPort: 81
+
+      #    imagePullPolicy: Always          
+      #   resources:
+      #     requests:
+      #       memory: "1000Mi"
+      #       cpu: "350m"
+      #     limits:
+      #       memory: "1500Mi"
+      #       cpu: "500m" 
+      #   ports:
+      #   - containerPort: 80
+      # restartPolicy: Always
