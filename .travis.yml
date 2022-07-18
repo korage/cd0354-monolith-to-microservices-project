@@ -19,7 +19,7 @@ script:
   - docker-compose -f docker-compose-build.yaml build --parallel
   - docker tag backend-feed docker_hub/udagram-api-feed
   - docker tag backend-user docker_hub/udagram-api-user
-  - docker tag frontend:local docker_hub/udagram-frontend
+  - docker tag frontend docker_hub/udagram-frontend
   - docker tag reverseproxy docker_hub/udagram-reverseproxy
 
 after_success:
