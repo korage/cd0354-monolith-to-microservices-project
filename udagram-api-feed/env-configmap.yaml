@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ConfigMap
+metadata:
+  name: backend-feed
+  labels:
+    app: backend-feed
+data:
+  # username: process.env.POSTGRES_USERNAME
+  # password: process.env.POSTGRES_PASSWORD
+  database: postgres
+  host: cdr-udagram.czqajqk7kyhl.us-east-1.rds.amazonaws.com
+  dialect: postgres
+  aws_region: us-east-1
+  aws_profile: default
+  aws_media_bucket: test-576115038802-dev
+  url: http://localhost:8100
+  
+  jwt: 
+    secret: hello
+  
